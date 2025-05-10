@@ -33,5 +33,5 @@ EXPOSE 8000 8501
 # ── Entrypoint ────────────────────────────────────────────────────────────────
 CMD bash -c "\
   uvicorn main:app --host 0.0.0.0 --port 8000 & \
-  streamlit run ui_app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true \
+  streamlit run utils/ui_app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true \
 "

@@ -102,8 +102,16 @@ class EmployeeSearchEngine:
 
             skill_ratio = _skills_match_ratio(skill_set, required_keywords)
             age_s = _age_score(int(row["Employee Age"]), age_min, age_max)
-            final_score = ROLE_WEIGHT * sim + SKILL_WEIGHT * skill_ratio + AGE_WEIGHT * age_s
 
+            # ⬇️  NEW: skip candidates that fall outside the requested age range
+            if not (age_min <= int(row["Employee Age"]) <= age_max):
+                continue
+
+            final_score = (
+                ROLE_WEIGHT * sim
+                + SKILL_WEIGHT * skill_ratio
+                + AGE_WEIGHT  * age_s
+            )
             candidates.append(
                 {
                     "name": row["Employee Name"],

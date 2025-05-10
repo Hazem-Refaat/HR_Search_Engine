@@ -8,7 +8,7 @@ similarity **plus** strict skill‑keyword and age filters.
 
 * **`utils/hr_search_engine.py`** – reusable `EmployeeSearchEngine` class (FAISS + Sentence‑Transformers)
 * **`main.py`**                     – FastAPI service (`/dataset`, `/search`, `/health`)
-* **`ui_app.py`**                   – Streamlit UI (backend URL hard‑coded in the file)
+* **`utils/ui_app.py`**             – Streamlit UI (backend URL from .env file or use the url hard-coded in the file)
 * **`test_fastapi.py`**            – tiny script that demonstrates calling the REST API
 * **`data/sample_employee_data_5000.xlsx`** – 5 000‑row demo dataset
 * **`Sample_HR_Queries_for_Employee_Search.csv`** – ready‑made queries & skills for testing
@@ -93,11 +93,11 @@ curl -X POST http://localhost:8000/search -H "Content-Type: application/json" \
 ├── data/
 │   └── sample_employee_data_5000.xlsx
 ├── utils/
-│   └── hr_search_engine.py          # core search engine class
+│   ├── hr_search_engine.py          # core search engine class
+│   └── ui_app.py                    # Streamlit front‑end
 ├── media/
 |   └── demo.gif                     # demo video 
 ├── main.py                          # FastAPI service
-├── ui_app.py                        # Streamlit front‑end (hard‑coded backend URL)
 ├── test_fastapi.py                  # demo client
 ├── Sample_HR_Queries_for_Employee_Search.csv
 ├── Dockerfile                       # multi‑stage container build (Py 3.12‑slim)
