@@ -1,5 +1,7 @@
 # Employee Search – Full‑Stack Demo
 
+![Demo](media/demo.gif)
+
 A concise, production‑oriented system that lets HR upload an **Excel** roster of
 employees, then retrieve the Top‑N best‑matching candidates using semantic role
 similarity **plus** strict skill‑keyword and age filters.
