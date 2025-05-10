@@ -94,6 +94,8 @@ curl -X POST http://localhost:8000/search -H "Content-Type: application/json" \
 │   └── sample_employee_data_5000.xlsx
 ├── utils/
 │   └── hr_search_engine.py          # core search engine class
+├── media/
+|   └── demo.gif                     # demo video 
 ├── main.py                          # FastAPI service
 ├── ui_app.py                        # Streamlit front‑end (hard‑coded backend URL)
 ├── test_fastapi.py                  # demo client
