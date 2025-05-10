@@ -26,7 +26,7 @@ pip install -r requirements.txt                    # installs FastAPI, FAISS‑C
 uvicorn main:app --reload --port 8000
 
 # 2) in another shell start the Streamlit UI
-streamlit run ui_app.py
+streamlit run utils/ui_app.py
 ```
 
 Open **[http://localhost:8501](http://localhost:8501)** and:
